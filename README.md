@@ -1,6 +1,6 @@
 # Como executar o projeto em outra máquina
 
-(Necessário ter o Python instalado)
+(Necessário ter o Python 3.1+ instalado)
 
 ### 1. Clone o repositório
 
