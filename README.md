@@ -1,5 +1,7 @@
 # Como executar o projeto em outra máquina
 
+(Necessário ter o Python instalado)
+
 ### 1. Clone o repositório
 
 git clone https://github.com/gabriesb/Cadastro-de-Usuarios.git
