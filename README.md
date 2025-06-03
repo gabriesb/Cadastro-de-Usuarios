@@ -20,7 +20,9 @@ source .venv/bin/activate
 
 ###3. Instale as dependências
 
-pip install -r requirements.txt
+pip install django
+
+pip install psycopg2-binary
 
 ###4. Configure o banco de dados PostgreSQL (Supabase)
 No arquivo settings.py do Django, configure a conexão com o banco PostgreSQL do Supabase:
