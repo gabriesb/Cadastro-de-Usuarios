@@ -1,20 +1,19 @@
 from django.shortcuts import render
-from .models import Usuario  #importar o model usuario criado
+from .models import Usuario
 
 def home(request):
     return render(request, 'usuarios/home.html')
 
 def usuarios(request):
-    # salvar os dados da tela no banco de dados
-    novo_usuario = Usuario()
-    novo_usuario.nome = request.POST.get('nome')
-    novo_usuario.idade = request.POST.get('idade')
-    novo_usuario.save()
+    if request.method == 'POST':
+        nome = request.POST.get('nome')
+        idade = request.POST.get('idade')
 
-    # exibir todos dados em uma nova pagina
+        if nome and idade:
+            novo_usuario = Usuario(nome=nome, idade=idade)
+            novo_usuario.save()
+
     usuarios = {
         'usuarios': Usuario.objects.all()
     }
-    # retornar os dados para a pagina 
     return render(request, 'usuarios/usuarios.html', usuarios)
-
